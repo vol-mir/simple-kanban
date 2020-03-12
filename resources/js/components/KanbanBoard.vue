@@ -19,6 +19,11 @@
                           {{ new Date(task.updated_at) | dateFormat('DD.MM.YYYY hh:mm:ss') }}
                         </small>
                       </div>
+                      <div>
+                        <small>
+                          Comments: {{ task.comments?task.comments.length:0 }}
+                        </small>
+                      </div>
                     </div>
                   </div>
                 </div>

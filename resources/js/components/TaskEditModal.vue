@@ -48,6 +48,14 @@
                     <button type="button" class="btn btn-primary" @click="saveTask()">Submit</button>
                   </form>
                 </div>
+
+                <h3 class="text-secondary">Comments:</h3>
+                <div v-for="comment in openTask.comments" :key="comment.id">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">{{ comment.name }}</div>
+                    <div class="panel-body">{{ new Date(comment.created_at) | dateFormat('DD.MM.YYYY hh:mm:ss') }}</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

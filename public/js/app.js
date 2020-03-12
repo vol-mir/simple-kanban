@@ -1983,6 +1983,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2130,6 +2135,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -76622,6 +76635,18 @@ var render = function() {
                                       "\n                      "
                                   )
                                 ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", [
+                                _c("small", [
+                                  _vm._v(
+                                    "\n                        Comments: " +
+                                      _vm._s(
+                                        task.comments ? task.comments.length : 0
+                                      ) +
+                                      "\n                      "
+                                  )
+                                ])
                               ])
                             ])
                           ])
@@ -77006,139 +77031,174 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "panel-body space-top" }, [
-                    !_vm.editOffset
-                      ? _c("p", [_vm._v(_vm._s(_vm.openTask.description))])
-                      : _c("div", { staticClass: "space-top" }, [
-                          _c("form", [
-                            _c("div", { staticClass: "form-group" }, [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.updateTask.name,
-                                    expression: "updateTask.name"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: { placeholder: "Name task" },
-                                domProps: { value: _vm.updateTask.name },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
-                                    }
-                                    _vm.$set(
-                                      _vm.updateTask,
-                                      "name",
-                                      $event.target.value
-                                    )
-                                  }
-                                }
-                              })
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "form-group" }, [
-                              _c(
-                                "select",
-                                {
+                  _c(
+                    "div",
+                    { staticClass: "panel-body space-top" },
+                    [
+                      !_vm.editOffset
+                        ? _c("p", [_vm._v(_vm._s(_vm.openTask.description))])
+                        : _c("div", { staticClass: "space-top" }, [
+                            _c("form", [
+                              _c("div", { staticClass: "form-group" }, [
+                                _c("input", {
                                   directives: [
                                     {
                                       name: "model",
                                       rawName: "v-model",
-                                      value: _vm.updateTask.status,
-                                      expression: "updateTask.status"
+                                      value: _vm.updateTask.name,
+                                      expression: "updateTask.name"
                                     }
                                   ],
                                   staticClass: "form-control",
+                                  attrs: { placeholder: "Name task" },
+                                  domProps: { value: _vm.updateTask.name },
                                   on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
                                       _vm.$set(
                                         _vm.updateTask,
-                                        "status",
-                                        $event.target.multiple
-                                          ? $$selectedVal
-                                          : $$selectedVal[0]
+                                        "name",
+                                        $event.target.value
                                       )
                                     }
                                   }
-                                },
-                                _vm._l(_vm.statusesName, function(option, key) {
-                                  return _c(
-                                    "option",
-                                    { key: key, domProps: { value: key } },
-                                    [
-                                      _vm._v(
-                                        "\n                        " +
-                                          _vm._s(option) +
-                                          "\n                      "
-                                      )
-                                    ]
-                                  )
-                                }),
-                                0
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "form-group" }, [
-                              _c("textarea", {
-                                directives: [
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "select",
                                   {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.updateTask.description,
-                                    expression: "updateTask.description"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                attrs: {
-                                  rows: "3",
-                                  placeholder: "Description task"
-                                },
-                                domProps: { value: _vm.updateTask.description },
-                                on: {
-                                  input: function($event) {
-                                    if ($event.target.composing) {
-                                      return
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.updateTask.status,
+                                        expression: "updateTask.status"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    on: {
+                                      change: function($event) {
+                                        var $$selectedVal = Array.prototype.filter
+                                          .call($event.target.options, function(
+                                            o
+                                          ) {
+                                            return o.selected
+                                          })
+                                          .map(function(o) {
+                                            var val =
+                                              "_value" in o ? o._value : o.value
+                                            return val
+                                          })
+                                        _vm.$set(
+                                          _vm.updateTask,
+                                          "status",
+                                          $event.target.multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        )
+                                      }
                                     }
-                                    _vm.$set(
-                                      _vm.updateTask,
-                                      "description",
-                                      $event.target.value
+                                  },
+                                  _vm._l(_vm.statusesName, function(
+                                    option,
+                                    key
+                                  ) {
+                                    return _c(
+                                      "option",
+                                      { key: key, domProps: { value: key } },
+                                      [
+                                        _vm._v(
+                                          "\n                        " +
+                                            _vm._s(option) +
+                                            "\n                      "
+                                        )
+                                      ]
                                     )
+                                  }),
+                                  0
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "form-group" }, [
+                                _c("textarea", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.updateTask.description,
+                                      expression: "updateTask.description"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    rows: "3",
+                                    placeholder: "Description task"
+                                  },
+                                  domProps: {
+                                    value: _vm.updateTask.description
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.updateTask,
+                                        "description",
+                                        $event.target.value
+                                      )
+                                    }
                                   }
-                                }
-                              })
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "button",
+                                {
+                                  staticClass: "btn btn-primary",
+                                  attrs: { type: "button" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.saveTask()
+                                    }
+                                  }
+                                },
+                                [_vm._v("Submit")]
+                              )
+                            ])
+                          ]),
+                      _vm._v(" "),
+                      _c("h3", { staticClass: "text-secondary" }, [
+                        _vm._v("Comments:")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.openTask.comments, function(comment) {
+                        return _c("div", { key: comment.id }, [
+                          _c("div", { staticClass: "panel panel-default" }, [
+                            _c("div", { staticClass: "panel-heading" }, [
+                              _vm._v(_vm._s(comment.name))
                             ]),
                             _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-primary",
-                                attrs: { type: "button" },
-                                on: {
-                                  click: function($event) {
-                                    return _vm.saveTask()
-                                  }
-                                }
-                              },
-                              [_vm._v("Submit")]
-                            )
+                            _c("div", { staticClass: "panel-body" }, [
+                              _vm._v(
+                                _vm._s(
+                                  _vm._f("dateFormat")(
+                                    new Date(comment.created_at),
+                                    "DD.MM.YYYY hh:mm:ss"
+                                  )
+                                )
+                              )
+                            ])
                           ])
                         ])
-                  ])
+                      })
+                    ],
+                    2
+                  )
                 ])
               ])
             ]

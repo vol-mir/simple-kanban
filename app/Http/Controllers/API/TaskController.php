@@ -16,7 +16,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = Task::orderBy('updated_at', 'desc')->get();
+        $tasks = Task::orderBy('updated_at', 'desc')->with('comments')->get();
 
         return response()->json([
             'message' => 'Successfully get a listing of the tasks',
@@ -50,7 +50,7 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        $task = Task::findOrFail($id);
+        $task = Task::where('id', $id)->with('comments')->first();
 
         return response()->json([
             'message' => 'Successfully get a of the tasks',
