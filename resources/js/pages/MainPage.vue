@@ -1,11 +1,17 @@
 <template>
   <div class="content">
-    MainPage
+    <kanban-board></kanban-board>
   </div>
 </template>
 
 <script>
+import KanbanBoard from '@components/KanbanBoard.vue';
+
 export default {
-    name: 'MainPage'
+    name: 'MainPage',
+
+    components: {
+        KanbanBoard
+    }
 };
 </script>

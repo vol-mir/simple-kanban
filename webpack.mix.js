@@ -43,6 +43,14 @@ mix.js('resources/js/app.js', 'public/js')
                 __dirname,
                 'resources/js/layout'
             ),
+            '@modules': path.resolve(
+                __dirname,
+                'resources/js/store'
+            ),
+            '@components': path.resolve(
+                __dirname,
+                'resources/js/components'
+            ),
         }
     }
 });
